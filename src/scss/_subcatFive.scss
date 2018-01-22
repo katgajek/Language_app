@@ -1,0 +1,45 @@
+.subcatFive{
+  display: none;
+}
+
+.slider ul{
+  list-style: none;
+}
+
+.slider li{
+  display: none;
+}
+
+.slider .visible{
+  display: inline-block;
+}
+
+.sliderList{
+  margin-bottom:10px;
+}
+
+.sliderList img{
+  border:2px solid gray;
+  margin-top:10px;
+  width: 500px;
+  height:420px;
+  display:block;
+  &:hover{
+    opacity:0.6;
+  }
+
+}
+
+#prevPicture, #nextPicture {
+  background-color: #fff;
+  color: red;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  i {
+    color: $greenColor;
+    font-size: 25px;
+  }
+
+}

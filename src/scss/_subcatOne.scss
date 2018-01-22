@@ -1,0 +1,49 @@
+.subcatOne {
+  display: none;
+  transition: 1s all;
+}
+
+
+.subcatOne-list{
+  list-style: none;
+  line-height: 40px;
+  font-size: 30px;
+  padding: 30px 100px 50px 100px;
+  margin: 0 auto;
+
+  li{
+    padding:10px;
+  }
+}
+
+.btn-prev{
+  padding:10px 15px;
+  font-size: 17px;
+  margin-left:10px;
+  margin-right: 10px;
+  font-weight: 600;
+
+}
+
+.btn-true-false{
+  display: inline-block;
+  padding:10px 15px;
+  background-color: $greenColor;
+  border: none;
+  color:#fff;
+  font-size: 17px;
+  margin-left:10px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s all;
+
+  &:hover{
+    background-color: #fff;
+    color:$greenColor;
+  }
+
+}
+
+
+

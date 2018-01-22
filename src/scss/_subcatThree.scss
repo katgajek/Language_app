@@ -1,0 +1,46 @@
+.subcatThree{
+  display: none;
+}
+
+.section.subcatThree .row{
+  margin-top:30px;
+  margin-bottom:30px;
+
+}
+
+.subcatThree-list{
+  list-style: none;
+  line-height: 70px;
+  font-size: 30px;
+
+}
+
+.col-8{
+  margin-right:30px;
+}
+
+.hiddenHint{
+  display:none;
+  font-size:17px;
+  padding:3px;
+  width:30%;
+  color: $greenColor;
+  transition: 2s;
+  position:absolute;
+  right:40px;
+  top:-28px;
+
+}
+
+.section-hint{
+  margin-bottom:20px;
+}
+
+.btn-hint{
+  padding:13px 40px;
+  font-size: 17px;
+  margin-left:10px;
+  margin-right: 10px;
+  border-radius:15px;
+
+}

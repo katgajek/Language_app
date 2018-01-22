@@ -1,0 +1,40 @@
+.categories{
+display: none;
+
+}
+
+.categories-list{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 30px;
+  list-style: none;
+  padding-left:50px;
+  padding-right:50px;
+
+}
+
+
+.category{
+  border: 2px solid gray;
+  margin-left:10px;
+  margin-right:10px;
+  margin-bottom:10px;
+}
+
+.category-pic{
+  width: 200px;
+  height:200px;
+  display:block;
+  &:hover{
+    opacity:0.6;
+  }
+
+}
+
+.categories-info{
+  padding: 10px;
+  font-size: 30px;
+}

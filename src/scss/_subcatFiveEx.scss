@@ -1,0 +1,74 @@
+.subcatFive-exercies{
+  display: none;
+}
+
+.exercise{
+  text-align: right;
+  margin-right:30px;
+
+
+}
+
+.next{
+  display: inline-block;
+  padding:1px 6px;
+  background-color: $greenColor;
+  border: none;
+  color:#fff;
+  font-size: 15px;
+
+  cursor:pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s all;
+
+&:hover{
+  background-color: #fff;
+  color:$greenColor;
+}
+
+}
+
+//.subcatFive-exercies{
+//  background: #e5e5e5;
+//}
+.gallery{
+  margin-top:20px;
+}
+.gallery img{
+  width:123px;
+  height: 120px;
+  border:3px solid #bfbfbf;
+  //margin-left:40px;
+  //margin-right:40px;
+  transform: rotate(-6deg);
+
+}
+
+.gallery img:nth-child(odd){
+  transform: scale(1.2) rotate(5deg);
+}
+
+.questions{
+  margin-top:20px;
+}
+
+
+.box{
+  font-size: 20px;
+  margin-top:10px;
+
+}
+p{
+  font-size:22px;
+  margin-bottom:5px;
+}
+label{
+  margin-top:10px;
+  font-weight: 500;
+}
+
+.answers input{
+  margin-right:5px;
+}
+

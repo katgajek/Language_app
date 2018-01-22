@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Getting Started With Gup</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+</head>
+
+<body>
+
+  <main class="main-page">
+
+      <div class="container">
+
+          <section class="section intro">
+            <h1 class="intro-message">
+              Estas listo a empezar?
+            </h1>
+            <button class="btn btn-intro-confirm" id="btnIntroConfirm">Por supesto que si!</button>
+            <button class="btn btn-intro-decline">Todavia no...</button>
+
+          </section>
+
+          <section class="section categories">
+            <ul class="categories-list">
+              <li class="category">
+                <a class="" href="#" data-cat="1">
+                    <img class="category-pic" src="images/verdadero_o_falso.png" alt="armchair">
+                </a>
+              </li>
+              <li class="category">
+                <a href="#" data-cat="2">
+                    <img class="category-pic" src="images/verbos.png" alt="armchair">
+                </a>
+              </li>
+              <li class="category">
+                <a href="#" data-cat="3">
+                    <img class="category-pic" src="images/armchair.jpg" alt="armchair">
+                </a>
+              </li>
+              <li class="category">
+                <a href="#" data-cat="4">
+                    <img class="category-pic" src="images/weather.jpg" alt="armchair">
+                </a>
+              </li>
+              <li class="category">
+                <a href="#" data-cat="5">
+                    <img class="category-pic" src="images/cultura.jpg" alt="armchair">
+                </a>
+              </li>
+            </ul>
+           <div class="categories-info">
+             <h3>hacer clic para elegir la categoria</h3>
+           </div>
+          </section>
+
+          <section class="section subcatOne" id="subcatOne">
+
+            <header class="section-header">
+                <button class="btn btn-prev">
+                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                    la section anterior
+                </button>
+            </header>
+
+            <ul class="subcatOne-list" id="subcatOneList">
+            </ul>
+
+          </section>
+
+          <section class="section subcatTwo" id="subcatTwo">
+
+          </section>
+
+          <section class="section subcatThree" id="subcatThree">
+
+              <header class="section-header">
+                  <button class="btn btn-prev">
+                      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                      la section anterior
+                  </button>
+              </header>
+
+              <div class="row">
+                  <div class="col-4">
+                      <ul class="subcatThree-list" id="subcatThreeListLeft">
+                      </ul>
+                  </div>
+                  <div class="col-8">
+                      <ul class="subcatThree-list" id="subcatThreeListRight">
+                      </ul>
+                  </div>
+              </div>
+            <div class="section-hint">
+              <a href="#"class="btn btn-hint" id="hint">
+
+                      necesitas la pista? haz click aqui y posa el raton sobre la definicion!
+              </a>
+            </div>
+
+          </section>
+
+          <section class="section subcatFour" id="subcatFour">
+              <header class="section-header">
+                  <button class="btn btn-prev">
+                      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                      la section anterior
+                  </button>
+              </header>
+                <div class="subcatFourList" id="subcatFourId">
+                </div>
+
+          </section>
+
+          <section class="section subcatFive" id="subcatFive">
+              <header class="section-header">
+                  <button class=" btn btn-prev">
+                      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                      la section anterior
+                  </button>
+              </header>
+              <div class="slider">
+                  <ul class="sliderList">
+                      <li>
+                          <h1>- Sagrada Familia -</h1>
+                          <img src="images/sagrada-familia-.jpg">
+                      </li>
+                      <li>
+                          <h1>- La bandera espanola -</h1>
+                          <img src="images/flag.jpg">
+                      </li>
+                      <li>
+                          <h1>- Madrid, la capital -</h1>
+                          <img src="images/madrid-.jpg">
+                      </li>
+                      <li>
+                          <h1>- Matador- </h1>
+                          <img src="images/matador.jpg">
+                      </li>
+                      <li>
+                          <h1>- Pablo Picasso, pintador -</h1>
+                          <img src="images/pablo.jpg">
+                      </li>
+                      <li>
+                          <h1>- Prado, museo national en Madrid -</h1>
+                          <img src="images/prado.jpg">
+                      </li>
+                      <li>
+                          <h1>- Tenerife, la isla -</h1>
+                          <img src="images/teneryfa.jpeg">
+                      </li>
+                      <li>
+                          <h1>- Paella -</h1>
+                          <img src="images/seafood.jpg">
+                      </li>
+                  </ul>
+                  <button id="prevPicture"><i class="fa fa-backward" aria-hidden="true"></i></button>
+                  <button id="nextPicture"><i class="fa fa-forward" aria-hidden="true"></i></button>
+              </div>
+
+              <div class="exercise" id="ex">
+                  <a class="next">Ejercicio</a>
+              </div>
+
+          </section>
+
+          <section class="section subcatFive-exercies" id="sub5Ex">
+              <header class="section-header">
+                  <button class=" btn btn-prev">
+                      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                      la section anterior
+                  </button>
+              </header>
+
+              <div class="gallery">
+                  <img src="images/sagrada-familia-.jpg" alt="pablo_picasso">
+                  <img src="images/matador.jpg" alt="pablo_picasso">
+                  <img src="images/prado.jpg" alt="pablo_picasso">
+                  <img src="images/pablo.jpg" alt="pablo_picasso">
+                  <img src="images/seafood.jpg" alt="pablo_picasso">
+                  <img src="images/teneryfa.jpeg" alt="pablo_picasso">
+                  <img src="images/park_guel.jpg" alt="pablo_picasso">
+              </div>
+              <!--<div class="row">-->
+
+              <div class="questions">
+                  <div class="box">
+                  <p class="question">Prado es el museo situado en:</p>
+                  <ul class="answers">
+                      <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Barcelona</label><br/>
+                      <input type="radio" name="q1" value="b" id="q1b" data-ans="ok"><label for="q1b">Madrid</label><br/>
+                      <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Cordoba</label><br/>
+                  </ul>
+                  </div>
+
+                  <div class="box">
+                  <p class="question">Sagrada Familia es una iglesia famosa en: </p>
+                  <ul class="answers">
+                      <input type="radio" name="q1" value="a" id="q1a" data-ans="ok"><label for="q1a">Barcelona</label><br/>
+                      <input type="radio" name="q1" value="b" id="q1b" ><label for="q1b">Sewilla</label><br/>
+                      <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Cordoba</label><br/>
+                  </ul>
+                  </div>
+
+                  <div class="box">
+                  <p class="question">La capital de Espana es:</p>
+                  <ul class="answers">
+                      <input type="radio" name="q1" value="a" id="q1a"><label for="q1a">Valencia</label><br/>
+                      <input type="radio" name="q1" value="b" id="q1b" data-ans="ok"><label for="q1b">Madrid</label><br/>
+                      <input type="radio" name="q1" value="c" id="q1c"><label for="q1c">Cordoba</label><br/>
+                  </ul>
+                  </div>
+
+              </div>
+              <!--</div>-->
+          </section>
+  </div>
+  </main>
+
+</body>
+<script src="js/app.js"></script>
+</html>
