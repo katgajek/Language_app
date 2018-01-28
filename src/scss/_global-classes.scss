@@ -9,7 +9,7 @@ $column: 12;
 
 .container{
   margin: 0 auto;
-  width: 70%;
+  width: 75%;
 
  }
 
@@ -23,7 +23,6 @@ $column: 12;
 
  [class*="col-"] {
   width: 100%;
-  //padding: $gap;
   box-sizing: border-box;
   margin-bottom: 2*$gap;
  }

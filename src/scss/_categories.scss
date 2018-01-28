@@ -1,5 +1,5 @@
 .categories{
-display: none;
+  display: none;
 
 }
 
@@ -15,7 +15,6 @@ display: none;
   padding-right:50px;
 
 }
-
 
 .category{
   border: 2px solid gray;
@@ -37,4 +36,14 @@ display: none;
 .categories-info{
   padding: 10px;
   font-size: 30px;
+}
+
+@media (max-width: 800px){
+  .category-pic{
+    width:100px;
+    height:100px;
+  }
+  .categories-info{
+    font-size: 15px;
+  }
 }

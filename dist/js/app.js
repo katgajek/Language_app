@@ -74,6 +74,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function yesOrNo() {
 
+        var config = {
+            apiKey: "AIzaSyCj4oj3hGGCtaKX7_taie0WePsn9ngIzTI",
+            authDomain: "languageapp-3b00f.firebaseapp.com",
+            databaseURL: "https://languageapp-3b00f.firebaseio.com",
+            projectId: "languageapp-3b00f",
+            storageBucket: "languageapp-3b00f.appspot.com",
+            messagingSenderId: "636737279920"
+        };
+        firebase.initializeApp(config);
+
+        var ref = firebase.database().ref();
+
+        let sents = [];
+        ref.on("value", function(snapshot) {
+            // console.log(snapshot.val());
+            sents = snapshot.val();
+            console.log(sents);
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+
+
+        var database = firebase.database();
+
         const subcatOneList = document.querySelector("#subcatOneList");
         const sentences = [
             {answer:"false", phrase:" Las fritas patatas son muy sanas."},
@@ -137,6 +162,8 @@ document.addEventListener("DOMContentLoaded", function() {
             noBtn.addEventListener("click", noAnswer);
 
         });
+
+
     }
 
     yesOrNo();
@@ -295,15 +322,17 @@ document.addEventListener("DOMContentLoaded", function() {
         weatherList.forEach(el=>{
 
             const newItem = document.createElement("div");
-            newItem.innerText = el.def;
-            newItem.classList.add("weatherItem");
+            const weatherDef = document.createElement("p");
+            weatherDef.innerText = el.def;
+            weatherDef.classList.add("weatherItem");
             subcatFourList.appendChild(newItem);
             const input = document.createElement("input");
             const check = document.createElement("button");
             check.innerText = "verificar";
             check.classList.add("checkBtn");
-            subcatFourList.appendChild(input);
-            subcatFourList.appendChild(check);
+            newItem.appendChild(weatherDef);
+            newItem.appendChild(input);
+            newItem.appendChild(check);
 
         function removeGuessedWord() {
             if(input.value === el.word) {
@@ -314,11 +343,19 @@ document.addEventListener("DOMContentLoaded", function() {
             }else{
                 input.style.border = "3px solid red";
             }
+            const inputs = document.querySelectorAll("input");
+
+            if(inputs.length === 9){
+                const finalInfo = document.querySelector(".finalInfo");
+                finalInfo.style.opacity = 1;
+            }
+
         }
 
         check.addEventListener("click", removeGuessedWord);
 
         });
+
     }
 
     guessWeather();
@@ -367,9 +404,20 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //section 5a
     function quiz() {
-        const exerciseBtn = document.querySelector(".next");
+        const exerciseBtn = document.querySelector(".nextExercise");
         const subCat5 = document.querySelector("#sub5Ex");
-        console.log(subCat5);
+        const answers = document.querySelectorAll(".answers input");
+
+        answers.forEach(el=> {
+            el.addEventListener("click", function () {
+                const datasetVal = el.getAttribute("data-ans");
+                 if(datasetVal === "ok"){
+                 el.nextElementSibling.style.color = "#50c3b7";
+                 }else{
+                 el.nextElementSibling.style.color = "red";
+                 }
+            })
+        });
 
         exerciseBtn.addEventListener("click", function () {
             this.parentElement.parentElement.style = "none";

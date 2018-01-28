@@ -1,6 +1,5 @@
 .subcatOne {
   display: none;
-  transition: 1s all;
 }
 
 
@@ -34,6 +33,7 @@
   font-size: 17px;
   margin-left:10px;
   margin-right: 10px;
+  margin-top:10px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.4s all;
@@ -43,6 +43,12 @@
     color:$greenColor;
   }
 
+}
+
+@media (max-width: 800px){
+  .subcatOne-list{
+    font-size:20px;
+  }
 }
 
 
