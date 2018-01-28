@@ -6,10 +6,10 @@ version 0.3
 
 You will need the following things properly installed on your computer:
 
-Git
-Gulp
-npm
-node.js
+- Git
+- Gulp
+- npm
+- node.js
 
 # Instalation
 
