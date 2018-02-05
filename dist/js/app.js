@@ -84,7 +84,10 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         firebase.initializeApp(config);
 
+        var database = firebase.database();
+        console.log(database);
         var ref = firebase.database().ref();
+        console.log(ref);
 
         let sents = [];
         ref.on("value", function(snapshot) {
@@ -97,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-        var database = firebase.database();
+
 
         const subcatOneList = document.querySelector("#subcatOneList");
         const sentences = [
@@ -227,10 +230,10 @@ document.addEventListener("DOMContentLoaded", function() {
             subcatThreeListLeft.appendChild(newListItem);
             newListItem.classList.add("draggable");
             newListItem.dataset.num = index;
-            newListItem.style.textTransform="uppercase";
+            newListItem.style.textTransform = "uppercase";
         });
 
-        mixed.forEach((item,index) =>{
+        mixed.forEach((item,index) => {
             const newListItemRight = document.createElement("li");
             newListItemRight.innerText = item.definition;
             subcatThreeListRight.appendChild(newListItemRight);
@@ -240,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function() {
             hint.innerText = item.hint;
             newListItemRight.appendChild(hint);
             hint.classList.add("hiddenHint");
-            newListItemRight.dataset.number=index;
+            newListItemRight.dataset.number = index;
 
 
             $(".draggable").draggable({
@@ -304,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function() {
             {word: "calor", def: "necesitas un traje de bano, sombrero y hawaianas"},
             {word: "hielo", def: "cuando hace frio esto esta en el rio o en el lago y podemos patinar sobre esto "},
             {word: "otono", def: "la temporada cuando las hojas son de naranja, amarillo y marron"},
-            {word: "invierno", def: "la tempororada con Papa Noel y la Noche Vieja"},
+            {word: "invierno", def: "la temporada con Papa Noel y la Noche Vieja"},
             {word: "verano", def: "la temporada cuando tenemos las vacaciones y somos muuuy felices :)"},
             {word: "primavera", def: "la temporada con las cosas verdes "},
             {word: "lluvia", def: "la situacion cuando necesitas las paraguas"},

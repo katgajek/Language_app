@@ -15,7 +15,6 @@
   border: none;
   color:#fff;
   font-size: 15px;
-
   cursor:pointer;
   text-decoration: none;
   font-weight: 600;
@@ -44,7 +43,7 @@
 }
 
 .questions{
-  margin-top:20px;
+  margin:30px;
 }
 
 .box{
@@ -66,3 +65,13 @@ label{
   margin-right:5px;
 }
 
+@media(max-width:1000px){
+  .btn-prev{
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+  .gallery img{
+    width:60px;
+    height:60px;
+  }
+}
