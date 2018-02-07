@@ -53,7 +53,7 @@
 
 .question{
   font-size:22px;
-  margin-bottom:5px;
+  margin-bottom:15px;
 }
 
 label{
@@ -75,3 +75,10 @@ label{
     height:60px;
   }
 }
+
+@media (max-width:500px){
+  .question, .box{
+    font-size:15px;
+  }
+}
+

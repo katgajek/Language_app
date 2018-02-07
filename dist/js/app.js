@@ -6,10 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
         const introSection = document.querySelector(".intro");
         const catSection = document.querySelector(".categories");
         const subcatOne = document.querySelector("#subcatOne");
-        const subcatTwo = document.querySelector("#subcatTwo");
-        const subcatThree = document.querySelector("#subcatThree");
-        const subcatFour = document.querySelector("#subcatFour");
-        const subcatFive = document.querySelector("#subcatFive");
+        const subcatTwo = document.querySelector("#subcatThree");
+        const subcatThree = document.querySelector("#subcatFour");
+        const subcatFour = document.querySelector("#subcatFive");
         const category = document.querySelectorAll(".categories-list li");
         const btnPrev = document.querySelectorAll(".btn-prev");
 
@@ -20,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         btnConfirm.addEventListener("click", confirm);
 
-        btnPrev.forEach(el => {
+        [...btnPrev].forEach(el => {
             el.addEventListener("click", function () {
                 this.parentElement.parentElement.style.display = "none";
                 catSection.style.display = "block";
@@ -45,10 +44,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else if (this.children[0].getAttribute("data-cat") === "4") {
                     catSection.style.display = "none";
                     subcatFour.style.display = "block";
-
-                } else if (this.children[0].getAttribute("data-cat") === "5") {
-                    catSection.style.display = "none";
-                    subcatFive.style.display = "block";
                 }
             })
         }
@@ -97,10 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }, function (error) {
             console.log("Error: " + error.code);
         });
-
-
-
-
 
         const subcatOneList = document.querySelector("#subcatOneList");
         const sentences = [
@@ -326,23 +317,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const newItem = document.createElement("div");
             const weatherDef = document.createElement("p");
-            weatherDef.innerText = el.def;
-            weatherDef.classList.add("weatherItem");
-            subcatFourList.appendChild(newItem);
             const input = document.createElement("input");
             const check = document.createElement("button");
-            check.innerText = "verificar";
-            check.classList.add("checkBtn");
+
+            newItem.classList.add("weatherItem");
             newItem.appendChild(weatherDef);
             newItem.appendChild(input);
             newItem.appendChild(check);
+            subcatFourList.appendChild(newItem);
+            weatherDef.innerText = el.def;
+            weatherDef.classList.add("weatherText");
+            check.innerText = "verificar";
+            check.classList.add("checkBtn");
+
 
         function removeGuessedWord() {
             if(input.value === el.word) {
                 newItem.parentElement.removeChild(newItem);
-                check.parentElement.removeChild(check);
-                input.parentElement.removeChild(input);
-
             }else{
                 input.style.border = "3px solid red";
             }
@@ -411,7 +402,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const subCat5 = document.querySelector("#sub5Ex");
         const answers = document.querySelectorAll(".answers input");
 
-        answers.forEach(el=> {
+        [...answers].forEach(el=> {
             el.addEventListener("click", function () {
                 const datasetVal = el.getAttribute("data-ans");
                  if(datasetVal === "ok"){

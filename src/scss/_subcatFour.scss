@@ -4,20 +4,28 @@
 
 
 .subcatFourList{
-  margin:0 10px 20px 10px;
+  margin:20px 10px;
 
 }
 
 .weatherItem{
   padding-top:10px;
-  //padding-bottom: 15px;
-  font-size: 25px;
+  padding-bottom: 15px;
+  font-size: 20px;
+}
+.weatherText{
+  padding:10px;
 }
 
-input{
+.weatherItem input{
   padding:3px;
   font-size: 20px;
   color: $greenColor;
+  border-radius:10px;
+  border:1px solid #d1d1d1;
+  outline:none;
+  width:100%;
+  max-width:200px;
 
 }
 
@@ -29,7 +37,7 @@ input{
   color:$greenColor;
   border: transparent;
   font-weight: 500;
-  font-size:20px;
+  font-size:18px;
 
 }
 
@@ -37,10 +45,21 @@ input{
   font-size: 50px;
   opacity: 0;
   transition: 2s all;
+  top:40%;
+  position:absolute;
+  left:50%;
+  transform: translate(-50%);
 }
 
 @media (max-width: 800px){
   .weatherItem{
-    font-size:20px;
+    font-size:15px;
+  }
+}
+
+@media (max-width: 500px){
+  .weatherItem{
+    font-size:15px;
+    padding:5px 15px;
   }
 }

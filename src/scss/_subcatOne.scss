@@ -28,6 +28,8 @@
   text-decoration: none;
   font-weight: 600;
   transition: 0.4s all;
+  border-radius:20px;
+  outline:none;
 
   &:hover{
     background-color: #fff;
@@ -39,6 +41,19 @@
 @media (max-width: 800px){
   .subcatOne-list{
     font-size:20px;
+    padding: 30px 50px;
+  }
+  .btn-true-false{
+    padding:5px 8px;
+    font-size: 12px;
+
+  }
+}
+
+@media (max-width: 500px){
+  .subcatOne-list{
+    font-size: 15px;
+    line-height:20px;
   }
 }
 

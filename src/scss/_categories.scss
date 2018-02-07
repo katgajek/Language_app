@@ -7,8 +7,8 @@
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
-  text-align: center;
-  padding: 100px 50px 30px 50px;
+  margin: auto;
+  padding: 80px;
   list-style: none;
 }
 
@@ -17,6 +17,7 @@
   margin-left:10px;
   margin-right:10px;
   margin-bottom:10px;
+
 }
 
 .category-pic{
@@ -32,14 +33,30 @@
 .categories-info{
   padding: 10px;
   font-size: 30px;
+  margin-bottom:100px;
 }
 
-@media (max-width: 800px){
+.section-cnt{
+display:flex;
+
+}
+
+@media (max-width: 830px){
+  .categories-list{
+    padding:40px;
+  }
   .category-pic{
-    width:100px;
-    height:100px;
+    width:150px;
+    height:150px;
   }
   .categories-info{
     font-size: 15px;
+  }
+}
+
+@media (max-width:600px){
+  .category-pic{
+    width:120px;
+    height:120px;
   }
 }
