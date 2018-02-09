@@ -1,17 +1,16 @@
-.subcatOne {
+.section-one {
   display: none;
 }
 
-
-.subcatOne-list{
+.section-one-list{
   list-style: none;
   line-height: 40px;
-  font-size: 30px;
-  padding: 30px 100px 50px 100px;
+  font-size: 25px;
+  padding: 0 100px 50px 100px;
   margin: 0 auto;
 
   li{
-    padding:10px;
+    padding-top:15px;
   }
 }
 
@@ -22,15 +21,15 @@
   border: none;
   color:#fff;
   font-size: 17px;
-  margin-left:10px;
-  margin-right: 10px;
+  margin-left:5px;
+  margin-right: 5px;
   margin-top:10px;
   text-decoration: none;
   font-weight: 600;
   transition: 0.4s all;
   border-radius:20px;
   outline:none;
-
+  cursor:pointer;
   &:hover{
     background-color: #fff;
     color:$greenColor;
@@ -39,9 +38,9 @@
 }
 
 @media (max-width: 800px){
-  .subcatOne-list{
+  .section-one-list{
     font-size:20px;
-    padding: 30px 50px;
+    padding: 0 50px 20px 50px;
   }
   .btn-true-false{
     padding:5px 8px;
@@ -51,7 +50,7 @@
 }
 
 @media (max-width: 500px){
-  .subcatOne-list{
+  .section-one-list{
     font-size: 15px;
     line-height:20px;
   }

@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    function sections() {
-
+    function sections(){
         const btnConfirm = document.querySelector("#btnIntroConfirm");
         const introSection = document.querySelector(".intro");
         const catSection = document.querySelector(".categories");
-        const subcatOne = document.querySelector("#subcatOne");
-        const subcatTwo = document.querySelector("#subcatThree");
-        const subcatThree = document.querySelector("#subcatFour");
-        const subcatFour = document.querySelector("#subcatFive");
+        const subcatOne = document.querySelector("#section-true-false");
+        const subcatTwo = document.querySelector("#section-furniture");
+        const subcatThree = document.querySelector("#section-three");
+        const subcatFour = document.querySelector("#section-four");
         const category = document.querySelectorAll(".categories-list li");
         const btnPrev = document.querySelectorAll(".btn-prev");
 
@@ -51,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     sections();
 
-
     function generateObj(el) {
         let randoms = [];
         for (let i = 0; i<5; i++) {
@@ -66,50 +64,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     //section 1
+    function trueOrFalse() {
 
-    function yesOrNo() {
-
-        var config = {
-            apiKey: "AIzaSyCj4oj3hGGCtaKX7_taie0WePsn9ngIzTI",
-            authDomain: "languageapp-3b00f.firebaseapp.com",
-            databaseURL: "https://languageapp-3b00f.firebaseio.com",
-            projectId: "languageapp-3b00f",
-            storageBucket: "languageapp-3b00f.appspot.com",
-            messagingSenderId: "636737279920"
-        };
-        firebase.initializeApp(config);
-
-        var database = firebase.database();
-        console.log(database);
-        var ref = firebase.database().ref();
-        console.log(ref);
-
-        let sents = [];
-        ref.on("value", function(snapshot) {
-            // console.log(snapshot.val());
-            sents = snapshot.val();
-            console.log(sents);
-        }, function (error) {
-            console.log("Error: " + error.code);
-        });
-
-        const subcatOneList = document.querySelector("#subcatOneList");
+        const sectionOneList = document.querySelector("#section-one-list");
         const sentences = [
-            {answer:"false", phrase:" Las fritas patatas son muy sanas."},
+            {answer: "false", phrase: " Las fritas patatas son muy sanas."},
             {answer: "true", phrase: "El presidente es una profesion muy seria."},
             {answer: "true", phrase: " Cuando la gente esta triste, escucha la musica."},
             {answer: "true", phrase: "Osos tienen las cabezas muy grandes."},
             {answer: "true", phrase: "Mi profesor de espanol es baja."},
             {answer: "true", phrase: "Vaticano es un pais pequeno."},
-            {answer:"false", phrase: "Cuando hace frio, vamos a la playa."},
-            {answer:"false", phrase: " Mi abuela es una mujer muy joven."},
+            {answer: "false", phrase: "Cuando hace frio, vamos a la playa."},
+            {answer: "false", phrase: " Mi abuela es una mujer muy joven."},
             {answer: "true", phrase: "Varsovia es una ciudad vieja."},
             {answer: "true", phrase: " Michael Jordan es un hombre alto."},
-            {answer:"false", phrase: "Baloncesto es un deporte dificil."},
-            {answer:"false", phrase: " Chino no es un idioma complicado."},
-            {answer:"false", phrase: "Perros no son animales simpaticos."},
+            {answer: "false", phrase: "Baloncesto es un deporte dificil."},
+            {answer: "false", phrase: " Chino no es un idioma complicado."},
+            {answer: "false", phrase: "Perros no son animales simpaticos."},
             {answer: "true", phrase: "Bill Gates es una persona rica."},
-            {answer:"false", phrase: " Justin Bieber es pobre."}
+            {answer: "false", phrase: " Justin Bieber es pobre."}
 
         ];
 
@@ -120,34 +93,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
         });
 
-        phrases.forEach(el=> {
+        phrases.forEach(el => {
             const newItem = document.createElement("li");
             const yesBtn = document.createElement("button");
             const noBtn = document.createElement("button");
             newItem.innerText = el.phrase;
-            subcatOneList.appendChild(newItem);
+            sectionOneList.appendChild(newItem);
             yesBtn.innerText = "verdadero";
             noBtn.innerText = "falso";
-            subcatOneList.appendChild(yesBtn);
-            subcatOneList.appendChild(noBtn);
+            sectionOneList.appendChild(yesBtn);
+            sectionOneList.appendChild(noBtn);
             yesBtn.classList.add("btn-true-false");
             noBtn.classList.add("btn-true-false");
             yesBtn.dataset.bool = "true";
             noBtn.dataset.bool = "false";
 
 
-            function yesAnswer(){
-                if(el.answer === yesBtn.dataset.bool){
-                    newItem.style.color="#50c3b7";
-                }else{
+            function yesAnswer() {
+                if (el.answer === yesBtn.dataset.bool) {
+                    newItem.style.color = "#50c3b7";
+                } else {
                     newItem.style.color = "red";
                 }
             }
 
-            function noAnswer(){
-                if(el.answer === noBtn.dataset.bool){
+            function noAnswer() {
+                if (el.answer === noBtn.dataset.bool) {
                     newItem.style.color = "#50c3b7";
-                }else{
+                } else {
                     newItem.style.color = "red";
                 }
             }
@@ -156,13 +129,12 @@ document.addEventListener("DOMContentLoaded", function() {
             noBtn.addEventListener("click", noAnswer);
 
         });
-
-
     }
 
-    yesOrNo();
+    trueOrFalse();
 
-    //section 3 //
+
+    //section 2 //
 
     const furniture = [
         {id:"1", word: "espejo",definition: "sirve para nos mirar por la manana o por la noche",hint:"cuarto de bano, la cara"},
@@ -183,8 +155,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function trueFalse() {
 
-        const subcatThreeListLeft = document.querySelector("#subcatThreeListLeft");
-        const subcatThreeListRight = document.querySelector("#subcatThreeListRight");
+        const sectionTwoListLeft = document.querySelector("#sectionTwoListLeft");
+        const sectionTwoListRight = document.querySelector("#sectionTwoListRight");
         const hintBtn = document.querySelector("#hint");
 
         let randoms = generateObj(furniture);
@@ -218,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const newListItem = document.createElement("li");
             newListItem.innerText = item.word;
-            subcatThreeListLeft.appendChild(newListItem);
+            sectionTwoListLeft.appendChild(newListItem);
             newListItem.classList.add("draggable");
             newListItem.dataset.num = index;
             newListItem.style.textTransform = "uppercase";
@@ -227,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
         mixed.forEach((item,index) => {
             const newListItemRight = document.createElement("li");
             newListItemRight.innerText = item.definition;
-            subcatThreeListRight.appendChild(newListItemRight);
+            sectionTwoListRight.appendChild(newListItemRight);
             newListItemRight.style.position = "relative";
             newListItemRight.classList.add("droppable");
             const hint = document.createElement("span");
@@ -285,11 +257,11 @@ document.addEventListener("DOMContentLoaded", function() {
     trueFalse();
 
 
-    //section 4
+    //section 3
 
     function guessWeather() {
 
-        const subcatFourList = document.querySelector("#subcatFourId");
+        const sectionThreeBox = document.querySelector("#section-three-box");
         const weather = [
             {word: "nieve", def: "la cosa blanca durante el invierno"},
             {word: "sol", def: "algo amarillo en el cielo"},
@@ -324,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function() {
             newItem.appendChild(weatherDef);
             newItem.appendChild(input);
             newItem.appendChild(check);
-            subcatFourList.appendChild(newItem);
+            sectionThreeBox.appendChild(newItem);
             weatherDef.innerText = el.def;
             weatherDef.classList.add("weatherText");
             check.innerText = "verificar";
@@ -354,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     guessWeather();
 
-    //section 5
+    //section 4
 
     function slider() {
 
@@ -371,7 +343,7 @@ document.addEventListener("DOMContentLoaded", function() {
         tab[index].classList.add('visible');
 
 
-        var next = function () {
+        const next = function () {
             tab[index].classList.remove('visible');
             index++;
             if (index >= tab.length) {
@@ -381,7 +353,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         };
 
-        var prev = function () {
+        const prev = function () {
             tab[index].classList.remove('visible');
             index--;
             if (index < 0) {
@@ -398,8 +370,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //section 5a
     function quiz() {
-        const exerciseBtn = document.querySelector(".nextExercise");
-        const subCat5 = document.querySelector("#sub5Ex");
+        const exerciseBtn = document.querySelector("#exercise-btn");
+        const subCat5 = document.querySelector("#section4ex");
         const answers = document.querySelectorAll(".answers input");
 
         [...answers].forEach(el=> {

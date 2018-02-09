@@ -43,6 +43,18 @@ $column: 12;
 
 }
 
+.section-header{
+  display:flex;
+  justify-content: center;
+  position: relative;
+  padding:20px;
+}
+
+.section-header-title {
+  font-size: 35px;
+  padding-top:20px;
+
+}
 .btn{
   color:white;
   display: inline-block;
@@ -52,10 +64,9 @@ $column: 12;
   text-decoration: none;
   transition: 0.4s all;
   outline: white;
-  border-radius: 20px;
-
-
- &:hover{
+  border-radius: 10px;
+  cursor:pointer;
+  &:hover{
   background-color: #fff;
   color:$greenColor;
  }
@@ -63,17 +74,12 @@ $column: 12;
 }
 
 .btn-prev{
-  padding:10px 15px;
-  font-size: 17px;
-  margin-left:10px;
-  margin-right: 10px;
+  padding:5px 10px;
+  font-size: 25px;
   font-weight: 600;
-}
-
-.section-header{
-  text-align: left;
-  margin-left:20px;
-  margin-top:20px;
+  position: absolute;
+  left:20px;
+  top:20px;
 }
 
 i{
@@ -81,16 +87,18 @@ i{
   margin-right:7px;
   text-align: center;
   transition: 0.4s all;
-
   &:hover{
-
     color:$greenColor;
   }
 }
 
-.section-header{
-  display:flex;
+@media (max-width: 830px) {
+  .section-header-title {
+    padding-top:40px;
+    font-size: 24px;
+  }
 }
+
 
 
 

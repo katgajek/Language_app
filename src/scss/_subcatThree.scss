@@ -1,52 +1,63 @@
-.subcatThree{
+.section-three{
   display: none;
 }
 
-.section.subcatThree .row{
-  margin-top:30px;
-  margin-bottom:30px;
-
+.section-three-box{
+  margin:20px 10px;
 }
 
-.subcatThree-list{
-  list-style: none;
-  line-height: 70px;
-  font-size: 30px;
-
+.weatherItem{
+  padding-top:10px;
+  padding-bottom: 15px;
+  font-size: 20px;
 }
 
-.col-8{
-  margin-right:30px;
+.weatherText{
+  padding:10px;
 }
 
-.hiddenHint{
-  display:none;
-  font-size:17px;
+.weatherItem input{
   padding:3px;
-  width:30%;
+  font-size: 20px;
   color: $greenColor;
-  transition: 2s;
-  position:absolute;
-  right:40px;
-  top:-28px;
-
+  border-radius:10px;
+  border:1px solid #d1d1d1;
+  outline:none;
+  width:100%;
+  max-width:200px;
 }
 
-.section-hint{
-  margin-bottom:20px;
-}
-
-.btn-hint{
-  padding:13px 40px;
-  font-size: 17px;
+.checkBtn{
   margin-left:10px;
-  margin-right: 10px;
-  border-radius:15px;
+  padding:5px 10px;
+  cursor:pointer;
+  background-color: white;
+  color:$greenColor;
+  border: transparent;
+  font-weight: 500;
+  font-size:18px;
 
 }
 
-@media (max-width: 900px){
-  .subcatThree-list{
-    font-size:20px;
+.finalInfo{
+  font-size: 50px;
+  opacity: 0;
+  transition: 2s all;
+  top:40%;
+  position:absolute;
+  left:50%;
+  transform: translate(-50%);
+}
+
+@media (max-width: 800px){
+  .weatherItem{
+    font-size:15px;
+  }
+}
+
+@media (max-width: 500px){
+  .weatherItem{
+    font-size:15px;
+    padding:5px 15px;
   }
 }

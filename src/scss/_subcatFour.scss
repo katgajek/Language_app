@@ -1,65 +1,90 @@
-.subcatFour{
+.section-four{
   display: none;
 }
 
+.slider ul{
+  list-style: none;
+}
 
-.subcatFourList{
-  margin:20px 10px;
+.slider li{
+  display: none;
+}
+
+.slider .visible{
+  display: inline-block;
+}
+
+.sliderList{
+  margin-bottom:10px;
+}
+
+.sliderList img{
+  border:2px solid gray;
+  margin-top:10px;
+  width: 500px;
+  height:420px;
+  display:block;
+  &:hover{
+    opacity:0.6;
+  }
 
 }
 
-.weatherItem{
-  padding-top:10px;
-  padding-bottom: 15px;
-  font-size: 20px;
-}
-.weatherText{
-  padding:10px;
-}
+#prevPicture, #nextPicture {
+  background-color: #fff;
+  color: red;
+  border: none;
+  margin-left: 10px;
+  margin-right: 10px;
 
-.weatherItem input{
-  padding:3px;
-  font-size: 20px;
-  color: $greenColor;
-  border-radius:10px;
-  border:1px solid #d1d1d1;
-  outline:none;
-  width:100%;
-  max-width:200px;
-
-}
-
-.checkBtn{
-  margin-left:10px;
-  padding:5px 10px;
-  cursor:pointer;
-  background-color: white;
-  color:$greenColor;
-  border: transparent;
-  font-weight: 500;
-  font-size:18px;
-
-}
-
-.finalInfo{
-  font-size: 50px;
-  opacity: 0;
-  transition: 2s all;
-  top:40%;
-  position:absolute;
-  left:50%;
-  transform: translate(-50%);
-}
-
-@media (max-width: 800px){
-  .weatherItem{
-    font-size:15px;
+  i {
+    color: $greenColor;
+    font-size: 25px;
   }
 }
 
-@media (max-width: 500px){
-  .weatherItem{
-    font-size:15px;
-    padding:5px 15px;
+.exercise{
+  text-align: center;
+  margin:30px 0;
+
+}
+
+.exercise-btn{
+  display: inline-block;
+  padding:10px 16px;
+  background-color: $greenColor;
+  border: none;
+  color:#fff;
+  font-size: 15px;
+  cursor:pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s all;
+  border-radius: 10px;
+
+  &:hover{
+    background-color: #fff;
+    color:$greenColor;
+  }
+}
+
+@media (max-width:800px){
+  .slider ul{
+    padding-top:40px;
+  }
+  .sliderList img{
+    width:300px;
+    height:210px;
+  }
+}
+
+@media (max-width:500px){
+  .sliderList img{
+    width:200px;
+    height:110px;
+  }
+
+  .section-four{
+    min-height:500px;
   }
 }

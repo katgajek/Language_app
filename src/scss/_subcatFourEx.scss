@@ -1,29 +1,5 @@
-.subcatFive-exercies{
+.section-four-exercise{
   display: none;
-}
-
-.exercise{
-  text-align: right;
-  margin-right:30px;
-
-}
-
-.nextExercise{
-  display: inline-block;
-  padding:1px 6px;
-  background-color: $greenColor;
-  border: none;
-  color:#fff;
-  font-size: 15px;
-  cursor:pointer;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.4s all;
-
-&:hover{
-  background-color: #fff;
-  color:$greenColor;
-  }
 }
 
 .gallery{

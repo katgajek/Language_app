@@ -1,3 +1,52 @@
-.subcatTwo{
+.section-two{
   display: none;
+}
+
+.section.section-two .row{
+  margin-top:30px;
+  margin-bottom:30px;
+
+}
+
+.section-two-list{
+  list-style: none;
+  line-height: 70px;
+  font-size: 30px;
+
+}
+
+.col-8{
+  margin-right:30px;
+}
+
+.hiddenHint{
+  display:none;
+  font-size:17px;
+  padding:3px;
+  width:30%;
+  color: $greenColor;
+  transition: 2s;
+  position:absolute;
+  right:40px;
+  top:-28px;
+
+}
+
+.section-two-hint{
+  margin-bottom:20px;
+}
+
+.btn-hint{
+  padding:13px 40px;
+  font-size: 17px;
+  margin-left:10px;
+  margin-right: 10px;
+  border-radius:15px;
+
+}
+
+@media (max-width: 900px){
+  .section-two-list{
+    font-size:20px;
+  }
 }

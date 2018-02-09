@@ -19,102 +19,97 @@
   <main class="main-page">
       <div class="container">
           <section class="section intro">
-                <h1 class="intro-message">
-                  Estas listo a empezar?
-                </h1>
-                <button class="btn btn-intro confirm" id="btnIntroConfirm">Por supesto que si!</button>
-                <button class="btn btn-intro decline">Todavia no...</button>
+              <h1 class="intro-message">
+              Estas listo a empezar?
+              </h1>
+              <button class="btn btn-intro confirm" id="btnIntroConfirm">Por supesto que si!</button>
+              <button class="btn btn-intro decline">Todavia no...</button>
           </section>
 
           <section class="section categories">
-            <ul class="categories-list">
-              <li class="category">
-                <a class="" href="#" data-cat="1">
-                    <img class="category-pic" src="images/verdadero_o_falso.png" alt="armchair">
-                </a>
-              </li>
-              <li class="category">
-                <a href="#" data-cat="2">
-                    <img class="category-pic" src="images/armchair.jpg" alt="armchair">
-                </a>
-              </li>
-              <li class="category">
-                <a href="#" data-cat="3">
-                    <img class="category-pic" src="images/weather.jpg" alt="armchair">
-                </a>
-              </li>
-              <li class="category">
-                <a href="#" data-cat="4">
-                    <img class="category-pic" src="images/cultura.jpg" alt="armchair">
-                </a>
-              </li>
+              <header class="section-header main-header">
+                  <h2 class="section-header-title">Hacer clic para elegir la categoria:</h2>
+              </header>
+              <ul class="categories-list">
+                  <li class="category">
+                      <a class="" href="#" data-cat="1">
+                          <img class="category-pic" src="images/verdadero_o_falso.png" alt="true_false_pic">
+                      </a>
+                  </li>
+                  <li class="category">
+                      <a href="#" data-cat="2">
+                          <img class="category-pic" src="images/armchair.jpg" alt="armchair">
+                      </a>
+                  </li>
+                  <li class="category">
+                      <a href="#" data-cat="3">
+                          <img class="category-pic" src="images/weather.jpg" alt="weather_pic">
+                      </a>
+                  </li>
+                  <li class="category">
+                      <a href="#" data-cat="4">
+                          <img class="category-pic" src="images/cultura.jpg" alt="cultura_pic">
+                      </a>
+                  </li>
             </ul>
-           <div class="categories-info">
-             <h3>Hacer clic para elegir la categoria</h3>
-           </div>
+
 
           </section>
 
-          <section class="section subcatOne" id="subcatOne">
+          <section class="section section-one" id="section-true-false">
+              <header class="section-header">
+                  <button class="btn btn-prev">
+                      <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                  </button>
+                  <h2 class="section-header-title">Instruction: Choose true or false</h2>
+                </header>
 
-            <header class="section-header">
-                <button class="btn btn-prev">
-                    <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                    la section anterior
-                </button>
-            </header>
-
-            <ul class="subcatOne-list" id="subcatOneList">
+            <ul class="section-one-list" id="section-one-list">
             </ul>
 
           </section>
 
-          <section class="section subcatThree" id="subcatThree">
+          <section class="section section-two" id="section-furniture">
 
               <header class="section-header">
                   <button class="btn btn-prev">
                       <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                      la section anterior
                   </button>
+                  <h2 class="section-header-title">Instruction: Drag and drop </h2>
               </header>
 
               <div class="row">
                   <div class="col-4">
-                      <ul class="subcatThree-list" id="subcatThreeListLeft">
-                      </ul>
+                      <ul class="section-two-list" id="sectionTwoListLeft"></ul>
                   </div>
                   <div class="col-8">
-                      <ul class="subcatThree-list" id="subcatThreeListRight">
-                      </ul>
+                      <ul class="section-two-list" id="sectionTwoListRight"></ul>
                   </div>
               </div>
-            <div class="section-hint">
-              <a href="#" class="btn btn-hint" id="hint">
-                  necesitas la pista? haz click aqui y posa el raton sobre la definicion!
-              </a>
+            <div class="section-two-hint">
+                <a href="#" class="btn btn-hint" id="hint">
+                    Click here for hint and mouse over the definition!
+                </a>
             </div>
 
           </section>
 
-          <section class="section subcatFour" id="subcatFour">
+          <section class="section section-three" id="section-three">
               <header class="section-header">
                   <button class="btn btn-prev">
                       <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                      la section anterior
                   </button>
+                  <h2 class="section-header-title">Instruction: Guess the word</h2>
               </header>
-                <div class="subcatFourList" id="subcatFourId">
-                    <span class="finalInfo">Enhorabuena !</span>
-                </div>
-
+              <div class="section-three-box" id="section-three-box"></div>
           </section>
 
-          <section class="section subcatFive" id="subcatFive">
+          <section class="section section-four" id="section-four">
               <header class="section-header">
                   <button class=" btn btn-prev">
                       <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                      la section anterior
                   </button>
+                  <h2 class="section-header-title">Look at the pictures and then move to the exercise </h2>
               </header>
               <div class="slider">
                   <ul class="sliderList">
@@ -156,64 +151,63 @@
               </div>
 
               <div class="exercise" id="ex">
-                  <a class="nextExercise">Ejercicio</a>
+                  <a class="exercise-btn" id="exercise-btn">Ejercicio</a>
               </div>
 
           </section>
 
-          <section class="section subcatFive-exercies" id="sub5Ex">
+          <section class="section section-four-exercise" id="section4ex">
               <header class="section-header">
                   <button class=" btn btn-prev">
                       <i class="fa fa-angle-double-left" aria-hidden="true"></i>
-                      la section anterior
                   </button>
               </header>
 
               <div class="gallery">
-                  <img src="images/sagrada-familia-.jpg" alt="pablo_picasso">
-                  <img src="images/matador.jpg" alt="pablo_picasso">
-                  <img src="images/prado.jpg" alt="pablo_picasso">
+                  <img src="images/sagrada-familia-.jpg" alt="sagrada_familia">
+                  <img src="images/matador.jpg" alt="matador">
+                  <img src="images/prado.jpg" alt="prado">
                   <img src="images/pablo.jpg" alt="pablo_picasso">
-                  <img src="images/seafood.jpg" alt="pablo_picasso">
-                  <img src="images/teneryfa.jpeg" alt="pablo_picasso">
-                  <img src="images/park_guel.jpg" alt="pablo_picasso">
+                  <img src="images/seafood.jpg" alt="seafood">
+                  <img src="images/teneryfa.jpeg" alt="teneryfa">
+                  <img src="images/park_guel.jpg" alt="park_guel">
               </div>
 
               <div class="questions">
                   <div class="box">
                       <p class="question">Prado es el museo situado en:</p>
-                      <ul class="answers">
+                      <div class="answers">
                           <input type="radio" name="q1" value="a" id="q1a">
                           <label for="q1a">Barcelona</label><br/>
                           <input type="radio" name="q1" value="b" id="q1b" data-ans="ok">
                           <label for="q1b">Madrid</label><br/>
                           <input type="radio" name="q1" value="c" id="q1c">
                           <label for="q1c">Cordoba</label><br/>
-                      </ul>
+                      </div>
                   </div>
 
                   <div class="box">
                       <p class="question">Sagrada Familia es una iglesia famosa en: </p>
-                      <ul class="answers">
-                          <input type="radio" name="q1" value="a" id="q1a" data-ans="ok">
-                          <label for="q1a">Barcelona</label><br/>
-                          <input type="radio" name="q1" value="b" id="q1b">
-                          <label for="q1b">Sewilla</label><br/>
-                          <input type="radio" name="q1" value="c" id="q1c">
-                          <label for="q1c">Cordoba</label><br/>
-                      </ul>
+                      <div class="answers">
+                          <input type="radio" name="q2" value="a" id="q2a" data-ans="ok">
+                          <label for="q2a">Barcelona</label><br/>
+                          <input type="radio" name="q2" value="b" id="q2b">
+                          <label for="q2b">Sewilla</label><br/>
+                          <input type="radio" name="q2" value="c" id="q2c">
+                          <label for="q2c">Cordoba</label><br/>
+                      </div>
                   </div>
 
                   <div class="box">
                       <p class="question">La capital de Espana es:</p>
-                      <ul class="answers">
-                          <input type="radio" name="q1" value="a" id="q1a">
-                          <label for="q1a">Valencia</label><br/>
-                          <input type="radio" name="q1" value="b" id="q1b" data-ans="ok">
-                          <label for="q1b">Madrid</label><br/>
-                          <input type="radio" name="q1" value="c" id="q1c">
-                          <label for="q1c">Cordoba</label><br/>
-                      </ul>
+                      <div class="answers">
+                          <input type="radio" name="q3" value="a" id="q3a">
+                          <label for="q3a">Valencia</label><br/>
+                          <input type="radio" name="q3" value="b" id="q3b" data-ans="ok">
+                          <label for="q3b">Madrid</label><br/>
+                          <input type="radio" name="q3" value="c" id="q3c">
+                          <label for="q3c">Cordoba</label><br/>
+                      </div>
                   </div>
               </div>
           </section>
