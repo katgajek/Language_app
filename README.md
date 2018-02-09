@@ -27,3 +27,6 @@ The app hasn't been finished yet, I am still working on it :)
 Technologies I used:
 HTML5, CSS3, SASS, JavaScript, jQuery, Gulp, Firebase(to finish).
 
+# You can see the result here:
+
+https://katgajek.github.io/Language_app/
