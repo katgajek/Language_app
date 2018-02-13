@@ -136,126 +136,69 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //section 2 //
 
-    const furniture = [
-        {id:"1", word: "espejo",definition: "sirve para nos mirar por la manana o por la noche",hint:"cuarto de bano, la cara"},
-        {id:"2", word: "ordenador",definition:"podemos verificar las informaciones, hablar con nuestros amigos",hint:"dormitorio, electronico"},
-        {id:"3", word: "mesa ", definition: "hizo de madera, podemos poner la comida sobre ella",hint:"cocina, mueblo, comedor"},
-        {id:"4", word: "sofa", definition: "en frente de la tele en cada sala de estar",hint:"comodo, relajarse, mueblo"},
-        {id:"5", word: "ventana ", definition: " nos da la luz en una habitacion",hint:"grande, cuadrado, transparente"},
-        {id:"6", word: "cuaderno", definition: "la decoracion en un muro de una habitacion",hint:"cuadrado, la pintura, dibujo"},
-        {id:"7", word: "frigorifico", definition: "el lugar frio donde ponemos la comida",hint:"cocina, technologia"},
-        {id:"8", word: "bano ", definition: "lo utilisamos para banarse" ,hint:"agua, cuerpo, la tarde"},
-        {id:"9", word: "alfombra", definition: "algo que ponemos en el suelo en cada habitacion",hint:"colorado"},
-        {id:"10", word: "puerta ", definition: "la abrimos o cerramos en nuestra casa",hint:"madera, rectangular"},
-        {id:"11", word: "lampara", definition: "nos da la luz", hint:"madera, metal, plastico"},
-        {id:"12", word: "armario", definition: "el lugar donde tenemos la ropa",hint:"dormitorio, vestidos"},
-        {id:"13", word: "flor", definition: "algo verde que decora nuestra casa",hint:" planta, agua"},
+    function furnitureMatch() {
 
-    ];
+        const words = ["espejo", "ordenador", "mesa", "sofa", "ventana", "cuaderno", "frigorifico"];
+        const answers = [
+            "sirve para mirarnos por la manana o por la noche",
+            "podemos verificar las informaciones, hablar con nuestros amigos",
+            "hizo de madera, podemos poner la comida sobre ella",
+            "en frente de la tele en cada sala de estar",
+            "nos da la luz en una habitacion",
+            "la decoracion en un muro de una habitacion",
+            "el lugar frio donde ponemos la comida",
 
-    function trueFalse() {
+       ];
 
-        const sectionTwoListLeft = document.querySelector("#sectionTwoListLeft");
-        const sectionTwoListRight = document.querySelector("#sectionTwoListRight");
-        const hintBtn = document.querySelector("#hint");
+        let word = [];
+        for (let i = 0; i < words.length; i++) {
+            word.push('<li data-index="' + (i + 1) + '">' + words[i] + '</li>');
+        }
 
-        let randoms = generateObj(furniture);
+        let answer = [];
+        for (let i = 0; i < answers.length; i++) {
+            answer.push('<li data-index="' + (i + 1) + '">' + answers[i] + '</li>');
+        }
 
-        const objects = randoms.map(random => {
-            return furniture[random];
+        function shuffle(o){
+            for(let j,x,i = o.length;i;j = Math.floor(Math.random()*i),x=o[--i],o[i]=o[j],o[j]=x);
+            return o;
+        }
+
+        answer = shuffle(answer);
+        word = shuffle(word);
+
+        $('.source').html(word);
+        $('.target').html(answer);
+
+        $(".source li").draggable({
+            revert: "invalid",
+            revertDuration: 200,
+            cursor: "move"
+        });
+
+        $(".target li").droppable({
+            accept: function(draggable){
+
+
+                if(parseInt(draggable.data('index'),10) === parseInt($(this).data('index'),10)){
+                    return true;
+                }else{
+                    return false;
+                }
+            },
+            drop: function(event, ui){
+                const that =$(this);
+                that.css('color', '#50c3b7').effect('bounce');
+                that.droppable('disable');
+                (ui.draggable).draggable('disable');
+
+            }
 
         });
 
-        function shuffleDefinitions() {
-
-            const shuffled = [];
-            objects.forEach(el => {
-                const index = Math.floor(Math.random() * el.length);
-                if (shuffled.indexOf(el[index]) === -1) {
-                    shuffled.push(el);
-                }
-
-            });
-            return shuffled;
-        }
-        let shuffled = shuffleDefinitions();
-
-        function shuffle(){
-            for(let j,x,i = shuffled.length;i;j = Math.floor(Math.random()*i),x=shuffled[--i],shuffled[i]=shuffled[j],shuffled[j]=x);
-            return shuffled;
-        }
-        let mixed = shuffle();
-
-        objects.forEach((item,index) => {
-
-            const newListItem = document.createElement("li");
-            newListItem.innerText = item.word;
-            sectionTwoListLeft.appendChild(newListItem);
-            newListItem.classList.add("draggable");
-            newListItem.dataset.num = index;
-            newListItem.style.textTransform = "uppercase";
-        });
-
-        mixed.forEach((item,index) => {
-            const newListItemRight = document.createElement("li");
-            newListItemRight.innerText = item.definition;
-            sectionTwoListRight.appendChild(newListItemRight);
-            newListItemRight.style.position = "relative";
-            newListItemRight.classList.add("droppable");
-            const hint = document.createElement("span");
-            hint.innerText = item.hint;
-            newListItemRight.appendChild(hint);
-            hint.classList.add("hiddenHint");
-            newListItemRight.dataset.number = index;
-
-
-            $(".draggable").draggable({
-                revert:true,
-                revertDuration: 200,
-                cursor: "move"
-            });
-
-            $(".droppable").droppable({
-                accept: function(draggable){
-
-                    console.log(draggable);
-                    console.log(this);
-
-
-                    if(parseInt(draggable.data("num"),10) === parseInt($(this).data("number"),10)){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                },
-                drop: function(event, ui){
-                    const that =$(this);
-                    that.css('color', 'red').effect('bounce');
-                    // ui.draggable.addClass('correct ui-state-error');
-                    that.droppable('disable');
-                    (ui.draggable).draggable('disable');
-
-                }
-
-            });
-
-            hintBtn.addEventListener("click", function() {
-
-                newListItemRight.addEventListener("mouseover", function () {
-                    hint.style.display = "inline";
-
-                });
-
-                newListItemRight.addEventListener("mouseout", function () {
-                    hint.style.display = "none";
-                })
-             })
-
-        })
     }
-
-    trueFalse();
-
+    furnitureMatch();
 
     //section 3
 
